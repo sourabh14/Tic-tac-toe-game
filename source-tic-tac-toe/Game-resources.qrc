@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Game-resources">
+        <file>Image-files/x-image.jpg</file>
+        <file>Image-files/widget.jpg</file>
+        <file>Image-files/tic-tac-toe.jpg</file>
+        <file>Image-files/o-image.jpg</file>
+    </qresource>
+</RCC>
