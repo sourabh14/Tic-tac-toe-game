@@ -3,13 +3,11 @@
 #include <QMainWindow>
 #include <cstring>
 
-GameWindow::GameWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::GameWindow)
-{
+//Constructor
+GameWindow::GameWindow(QWidget *parent) :QMainWindow(parent), ui(new Ui::GameWindow) {
     ui->setupUi(this);
 
-
+    //images
     pix_x = new QPixmap(":/Game-resources/Image-files/x-image.jpg");
     icon_x = new QIcon(*pix_x);         //X for player A
     pix_o = new QPixmap(":/Game-resources/Image-files/o-image.jpg");
@@ -18,26 +16,27 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->label->setPixmap(pix_l);
     msgbox.setStyleSheet("border-image : none");
 
+    //variables
+    int k=0;
     for (int i=0;i<3;i++) {
-       memset(h[i],0,sizeof(h[i]));
-       memset(v[i],0,sizeof(v[i]));
        memset(notclicked[i],1,sizeof(notclicked[i]));
-       memset(player[i],0,sizeof(player[i]));
+       for (int j=0; j<3; j++) player[i][j] = k++;
     }
-    memset(d[0],0,sizeof(d[0]));
-    memset(d[1],0,sizeof(d[1]));
 
-    move = 0;
+    move = 0;               //maximum moves are 9
+
+    //initial player is A
     current_player = true;  //true for A and false for B
     ui->label_7->setText("Player A's turn");
-
 }
 
-GameWindow::~GameWindow()
-{
+GameWindow::~GameWindow() {
     delete ui;
 }
 
+
+
+//Display Functions----
 
 void GameWindow::declare_winner(bool winner) {
     if (winner) {
@@ -58,11 +57,57 @@ void GameWindow::display_draw() {
 }
 
 
+//Check function
+
+void GameWindow:: check_winner() {
+    //check if a player has won the match
+    int i, j;
+    char a, b, c;
+
+    //horizontal
+    for (i=0; i<3; i++) {
+        a = player[i][0];
+        b = player[i][1];
+        c = player[i][2];
+        if ((a == b) &&  (b == c)) declare_winner(current_player);
+    }
+
+    //vertical
+    for (i=0; i<3; i++) {
+        a = player[0][i];
+        b = player[1][i];
+        c = player[2][i];
+        if ((a == b)  &&  (b == c)) declare_winner(current_player);
+    }
+
+    //diagonal
+    a = player[0][0];
+    b = player[1][1];
+    c = player[2][2];
+    if ((a == b)  &&  (b == c)) declare_winner(current_player);
+
+    a = player[0][2];
+    b = player[1][1];
+    c = player[2][0];
+    if ((a == b)  &&  (b == c)) declare_winner(current_player);
+
+    current_player = !current_player;
+    if(current_player)  ui->label_7->setText("Player A's turn");
+    else ui->label_7->setText("Player B's turn");
+
+    if ((move++) == 8) {  display_draw(); }
+
+}
+
+//Push buttons
+
 //                --CORNER CELLS--
 
 void GameWindow::on_pb00_pressed() {
     if (notclicked[0][0]) {
         notclicked[0][0] = false;
+
+        //set icon
         if (current_player) {
             ui->pb00->setIcon(*icon_x); ui->pb00->setIconSize(QSize(81,81));
             player[0][0] = 'A';
@@ -72,26 +117,11 @@ void GameWindow::on_pb00_pressed() {
             player[0][0] = 'B';
         }
 
-        if (player[0][0] == player[0][1]) {
-            h[0][0] = true; if (h[0][1] == true) declare_winner(current_player);
-        }
-        if (player[0][0] == player[1][1]) {
-            d[0][0] = true; if (d[0][1] == true) declare_winner(current_player);
-        }
-        if (player[0][0] == player[1][0]) {
-            v[0][0] = true; if (v[0][1] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }
 
-void GameWindow::on_pb22_pressed()
-{
+void GameWindow::on_pb22_pressed() {
     if (notclicked[2][2]) {
         notclicked[2][2] = false;
         if (current_player) {
@@ -103,20 +133,7 @@ void GameWindow::on_pb22_pressed()
             player[2][2] = 'B';
         }
 
-        if (player[2][2] == player[2][1]) {
-            h[2][1] = true; if (h[2][0] == true) declare_winner(current_player);
-        }
-        if (player[2][2] == player[1][1]) {
-            d[0][1] = true; if (d[0][0] == true) declare_winner(current_player);
-        }
-        if (player[2][2] == player[1][2]) {
-            v[2][1] = true; if (v[2][0] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }
 
@@ -133,20 +150,7 @@ void GameWindow::on_pb02_pressed()
             player[0][2] = 'B';
         }
 
-        if (player[0][2] == player[0][1]) {
-            h[0][1] = true; if (h[0][0] == true) declare_winner(current_player);
-        }
-        if (player[0][2] == player[1][1]) {
-            d[1][0] = true; if (d[1][1] == true) declare_winner(current_player);
-        }
-        if (player[0][2] == player[1][2]) {
-            v[2][0] = true; if (v[2][1] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }
 
@@ -163,20 +167,7 @@ void GameWindow::on_pb20_pressed()
             player[2][0] = 'B';
         }
 
-        if (player[2][0] == player[2][1]) {
-            h[2][0] = true; if (h[2][1] == true) declare_winner(current_player);
-        }
-        if (player[2][0] == player[1][1]) {
-            d[1][1] = true; if (d[1][0] == true) declare_winner(current_player);
-        }
-        if (player[2][0] == player[1][0]) {
-            v[0][1] = true; if (v[0][0] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }
 
@@ -196,20 +187,7 @@ void GameWindow::on_pb01_pressed()
             player[0][1] = 'B';
         }
 
-        if (player[0][1] == player[0][0]) {
-            h[0][0] = true; if (h[0][1] == true) declare_winner(current_player);
-        }
-        if (player[0][1] == player[0][2]) {
-            h[0][1] = true; if (h[0][0] == true) declare_winner(current_player);
-        }
-        if (player[0][1] == player[1][1]) {
-            v[1][0] = true; if (v[1][1] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-        if ((move++) == 8) {  display_draw(); }
+       check_winner();
     }
 }
 
@@ -226,20 +204,7 @@ void GameWindow::on_pb10_pressed()
             player[1][0] = 'B';
         }
 
-        if (player[1][0] == player[0][0]) {
-            v[0][0] = true; if (v[0][1] == true) declare_winner(current_player);
-        }
-        if (player[1][0] == player[2][0]) {
-            v[0][1] = true; if (v[0][0] == true) declare_winner(current_player);
-        }
-        if (player[1][0] == player[1][1]) {
-            h[1][0] = true; if (h[1][1] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }
 
@@ -256,21 +221,7 @@ void GameWindow::on_pb12_pressed()
             player[1][2] = 'B';
         }
 
-        if (player[1][2] == player[0][2]) {
-            v[2][0] = true; if (v[2][1] == true) declare_winner(current_player);
-        }
-        if (player[1][2] == player[2][2]) {
-            v[2][1] = true; if (v[2][0] == true) declare_winner(current_player);
-        }
-        if (player[1][2] == player[1][1]) {
-            h[1][1] = true; if (h[1][0] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }
 
@@ -287,20 +238,7 @@ void GameWindow::on_pb21_pressed()
             player[2][1] = 'B';
         }
 
-        if (player[2][1] == player[2][0]) {
-            h[2][0] = true; if (h[2][1] == true) declare_winner(current_player);
-        }
-        if (player[2][1] == player[2][2]) {
-            h[2][1] = true; if (h[2][0] == true) declare_winner(current_player);
-        }
-        if (player[2][1] == player[1][1]) {
-            v[1][1] = true; if (v[1][0] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }
 
@@ -319,34 +257,6 @@ void GameWindow::on_pb11_pressed()
             player[1][1] = 'B';
         }
 
-        if (player[1][1] == player[0][0]) {
-            d[0][0] = true; if (d[0][1] == true) declare_winner(current_player);
-        }
-        if (player[1][1] == player[0][1]) {
-            v[1][0] = true; if (v[1][1] == true) declare_winner(current_player);
-        }
-        if (player[1][1] == player[0][2]) {
-            d[1][0] = true; if (d[1][1] == true) declare_winner(current_player);
-        }
-        if (player[1][1] == player[1][0]) {
-            h[1][0] = true; if (h[1][1] == true) declare_winner(current_player);
-        }
-        if (player[1][1] == player[1][2]) {
-            h[1][1] = true; if (h[1][0] == true) declare_winner(current_player);
-        }
-        if (player[1][1] == player[2][0]) {
-            d[1][1] = true; if (d[1][0] == true) declare_winner(current_player);
-        }
-        if (player[1][1] == player[2][1]) {
-            v[1][1] = true; if (v[1][0] == true) declare_winner(current_player);
-        }
-        if (player[1][1] == player[2][2]) {
-             d[0][1] = true; if (d[0][0] == true) declare_winner(current_player);
-        }
-
-        current_player = !current_player;
-        if(current_player)  ui->label_7->setText("Player A's turn");
-        else ui->label_7->setText("Player B's turn");
-        if ((move++) == 8) {  display_draw(); }
+        check_winner();
     }
 }

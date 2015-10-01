@@ -17,10 +17,11 @@ public:
     explicit GameWindow(QWidget *parent = 0);
     ~GameWindow();
     void declare_winner(bool);
+    void check_winner();
     void display_draw();
     QPixmap *pix_o, *pix_x;
     QIcon *icon_o, *icon_x;
-    bool h[3][2], v[3][2], d[2][2], notclicked[3][3], current_player;
+    bool notclicked[3][3], current_player;
     int move;
     char player[3][3];
     QMessageBox msgbox;
