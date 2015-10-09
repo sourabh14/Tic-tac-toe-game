@@ -1,9 +1,10 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
-#include <QMainWindow>
+//#include <MainWindow>
 #include <ui_gamewindow.h>
 #include <QMessageBox>
+#include <QWidget>
 
 namespace Ui {
 class GameWindow;

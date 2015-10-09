@@ -61,7 +61,7 @@ void GameWindow::display_draw() {
 
 void GameWindow:: check_winner() {
     //check if a player has won the match
-    int i, j;
+    int i;
     char a, b, c;
 
     //horizontal
