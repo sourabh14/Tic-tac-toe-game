@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "gamewindow.h"
+#include "versus_computer_form.h"
 
 namespace Ui {
 class MenuForm;
@@ -21,9 +22,16 @@ private slots:
 
     void on_commandLinkButton_2_clicked();
 
+    void on_commandLinkButton_clicked();
+
+    void on_commandLinkButton_4_clicked();
+    void on_commandLinkButton_5_clicked();
+
+
 private:
     Ui::MenuForm *ui;
     GameWindow two_player_game;
+    versus_computer_form vs_comp;
 };
 
 #endif // MENUFORM_H

@@ -52,8 +52,8 @@ public:
     {
         if (GameWindow->objectName().isEmpty())
             GameWindow->setObjectName(QStringLiteral("GameWindow"));
-        GameWindow->resize(659, 578);
-        GameWindow->setStyleSheet(QStringLiteral("border-image : url(:/Game-resources/Image-files/widget.jpg);"));
+        GameWindow->resize(660, 580);
+        GameWindow->setStyleSheet(QStringLiteral("border-image : none;"));
         centralWidget = new QWidget(GameWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label_7 = new QLabel(centralWidget);
@@ -69,6 +69,7 @@ public:
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(180, 140, 301, 301));
+        label->setStyleSheet(QStringLiteral("border-image: url(:/Game-resources/Image-files/tic-tac-toe.jpg);"));
         label->setPixmap(QPixmap(QString::fromUtf8("../../git/tic-tac-toe/Tic-tac-toe/image-files/tic-tac-toe.jpg")));
         pb02 = new QPushButton(centralWidget);
         pb02->setObjectName(QStringLiteral("pb02"));
@@ -156,7 +157,7 @@ public:
         GameWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(GameWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 659, 25));
+        menuBar->setGeometry(QRect(0, 0, 660, 25));
         GameWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(GameWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));

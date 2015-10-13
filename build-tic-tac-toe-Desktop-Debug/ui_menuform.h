@@ -29,12 +29,16 @@ public:
     QCommandLinkButton *commandLinkButton_2;
     QCommandLinkButton *commandLinkButton_3;
     QCommandLinkButton *commandLinkButton;
+    QCommandLinkButton *commandLinkButton_4;
+    QCommandLinkButton *commandLinkButton_5;
+    QLabel *label_5;
 
     void setupUi(QWidget *MenuForm)
     {
         if (MenuForm->objectName().isEmpty())
             MenuForm->setObjectName(QStringLiteral("MenuForm"));
-        MenuForm->setStyleSheet(QStringLiteral("border-image : url(:/Game-resources/Image-files/widget.jpg);"));
+        MenuForm->resize(641, 571);
+        MenuForm->setStyleSheet(QStringLiteral(""));
         label_3 = new QLabel(MenuForm);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(450, 510, 101, 21));
@@ -65,12 +69,14 @@ public:
         commandLinkButton_2->setGeometry(QRect(40, 500, 141, 41));
         QFont font2;
         font2.setFamily(QStringLiteral("Ubuntu Mono"));
-        font2.setPointSize(16);
+        font2.setPointSize(14);
+        font2.setBold(true);
+        font2.setWeight(75);
         commandLinkButton_2->setFont(font2);
         commandLinkButton_2->setStyleSheet(QStringLiteral("border-image:none"));
         commandLinkButton_3 = new QCommandLinkButton(MenuForm);
         commandLinkButton_3->setObjectName(QStringLiteral("commandLinkButton_3"));
-        commandLinkButton_3->setGeometry(QRect(190, 290, 241, 51));
+        commandLinkButton_3->setGeometry(QRect(210, 320, 241, 51));
         QFont font3;
         font3.setFamily(QStringLiteral("Ubuntu Mono"));
         font3.setPointSize(20);
@@ -78,16 +84,28 @@ public:
         commandLinkButton_3->setStyleSheet(QStringLiteral("border-image : none;"));
         commandLinkButton = new QCommandLinkButton(MenuForm);
         commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
-        commandLinkButton->setGeometry(QRect(190, 180, 271, 51));
+        commandLinkButton->setGeometry(QRect(200, 160, 271, 51));
         commandLinkButton->setFont(font3);
         commandLinkButton->setStyleSheet(QStringLiteral("border-image : none;"));
-        label_3->raise();
-        label_2->raise();
-        label_4->raise();
-        commandLinkButton_2->raise();
-        commandLinkButton_3->raise();
-        commandLinkButton_3->raise();
-        commandLinkButton->raise();
+        commandLinkButton_4 = new QCommandLinkButton(MenuForm);
+        commandLinkButton_4->setObjectName(QStringLiteral("commandLinkButton_4"));
+        commandLinkButton_4->setGeometry(QRect(120, 230, 191, 41));
+        QFont font4;
+        font4.setPointSize(12);
+        font4.setBold(true);
+        font4.setWeight(75);
+        commandLinkButton_4->setFont(font4);
+        commandLinkButton_4->setStyleSheet(QStringLiteral("border-image : none;"));
+        commandLinkButton_5 = new QCommandLinkButton(MenuForm);
+        commandLinkButton_5->setObjectName(QStringLiteral("commandLinkButton_5"));
+        commandLinkButton_5->setGeometry(QRect(380, 230, 187, 41));
+        commandLinkButton_5->setFont(font4);
+        commandLinkButton_5->setStyleSheet(QStringLiteral("border-image : none;"));
+        label_5 = new QLabel(MenuForm);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(200, 110, 281, 31));
+        label_5->setFont(font);
+        label_5->setStyleSheet(QStringLiteral("border-image : none"));
 
         retranslateUi(MenuForm);
 
@@ -103,6 +121,9 @@ public:
         commandLinkButton_2->setText(QApplication::translate("MenuForm", "Quit Game", 0));
         commandLinkButton_3->setText(QApplication::translate("MenuForm", "Two player game", 0));
         commandLinkButton->setText(QApplication::translate("MenuForm", "Play V/S Computer", 0));
+        commandLinkButton_4->setText(QApplication::translate("MenuForm", "Computer plays first", 0));
+        commandLinkButton_5->setText(QApplication::translate("MenuForm", "Player plays first", 0));
+        label_5->setText(QApplication::translate("MenuForm", "This is an unbeatable tic-tac-toe game", 0));
     } // retranslateUi
 
 };

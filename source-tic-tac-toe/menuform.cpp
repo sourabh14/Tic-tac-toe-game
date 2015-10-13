@@ -6,6 +6,8 @@ MenuForm::MenuForm(QWidget *parent) :
     ui(new Ui::MenuForm)
 {
     ui->setupUi(this);
+    ui->commandLinkButton_4->hide();
+    ui->commandLinkButton_5->hide();
 }
 
 MenuForm::~MenuForm()
@@ -22,4 +24,23 @@ void MenuForm::on_commandLinkButton_3_clicked()
 void MenuForm::on_commandLinkButton_2_clicked()
 {
     qApp->quit();
+}
+
+void MenuForm::on_commandLinkButton_clicked()
+{
+    ui->commandLinkButton_4->show();
+    ui->commandLinkButton_5->show();
+}
+
+void MenuForm::on_commandLinkButton_4_clicked()     //Computer plays first
+{
+    vs_comp.show();
+    vs_comp.firstmove();
+    this->hide();
+}
+
+void MenuForm::on_commandLinkButton_5_clicked()     //Player plays first
+{
+    vs_comp.show();
+    this->hide();
 }

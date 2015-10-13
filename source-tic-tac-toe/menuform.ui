@@ -2,11 +2,19 @@
 <ui version="4.0">
  <class>MenuForm</class>
  <widget class="QWidget" name="MenuForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>641</width>
+    <height>571</height>
+   </rect>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border-image : url(:/Game-resources/Image-files/widget.jpg);</string>
+   <string notr="true"/>
   </property>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
@@ -90,7 +98,9 @@
    <property name="font">
     <font>
      <family>Ubuntu Mono</family>
-     <pointsize>16</pointsize>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -103,8 +113,8 @@
   <widget class="QCommandLinkButton" name="commandLinkButton_3">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>290</y>
+     <x>210</x>
+     <y>320</y>
      <width>241</width>
      <height>51</height>
     </rect>
@@ -125,8 +135,8 @@
   <widget class="QCommandLinkButton" name="commandLinkButton">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>180</y>
+     <x>200</x>
+     <y>160</y>
      <width>271</width>
      <height>51</height>
     </rect>
@@ -144,13 +154,74 @@
     <string>Play V/S Computer</string>
    </property>
   </widget>
-  <zorder>label_3</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_4</zorder>
-  <zorder>commandLinkButton_2</zorder>
-  <zorder>commandLinkButton_3</zorder>
-  <zorder>commandLinkButton_3</zorder>
-  <zorder>commandLinkButton</zorder>
+  <widget class="QCommandLinkButton" name="commandLinkButton_4">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>230</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image : none;</string>
+   </property>
+   <property name="text">
+    <string>Computer plays first</string>
+   </property>
+  </widget>
+  <widget class="QCommandLinkButton" name="commandLinkButton_5">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>230</y>
+     <width>187</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image : none;</string>
+   </property>
+   <property name="text">
+    <string>Player plays first</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>110</y>
+     <width>281</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image : none</string>
+   </property>
+   <property name="text">
+    <string>This is an unbeatable tic-tac-toe game</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

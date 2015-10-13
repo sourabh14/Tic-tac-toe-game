@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>659</width>
-    <height>578</height>
+    <width>660</width>
+    <height>580</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>GameWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border-image : url(:/Game-resources/Image-files/widget.jpg);</string>
+   <string notr="true">border-image : none;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="label_7">
@@ -49,6 +49,9 @@
       <width>301</width>
       <height>301</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/Game-resources/Image-files/tic-tac-toe.jpg);</string>
     </property>
     <property name="text">
      <string/>
@@ -339,7 +342,7 @@ border-image : none</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>659</width>
+     <width>660</width>
      <height>25</height>
     </rect>
    </property>
