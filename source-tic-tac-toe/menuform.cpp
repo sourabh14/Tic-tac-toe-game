@@ -1,5 +1,6 @@
 #include "menuform.h"
 #include "ui_menuform.h"
+#include <QMainWindow>
 
 MenuForm::MenuForm(QWidget *parent) :
     QWidget(parent),
@@ -8,6 +9,10 @@ MenuForm::MenuForm(QWidget *parent) :
     ui->setupUi(this);
     ui->commandLinkButton_4->hide();
     ui->commandLinkButton_5->hide();
+
+    //for background
+   // setStyleSheet("MenuForm {background-image: url(:/Game-resources/Image-files/widget-new.png);}");
+
 }
 
 MenuForm::~MenuForm()

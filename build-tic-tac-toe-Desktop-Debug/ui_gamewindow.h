@@ -53,7 +53,7 @@ public:
         if (GameWindow->objectName().isEmpty())
             GameWindow->setObjectName(QStringLiteral("GameWindow"));
         GameWindow->resize(660, 580);
-        GameWindow->setStyleSheet(QStringLiteral("border-image : none;"));
+        GameWindow->setStyleSheet(QStringLiteral("border-image: url(:/Game-resources/Image-files/widget.jpg);"));
         centralWidget = new QWidget(GameWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label_7 = new QLabel(centralWidget);

@@ -14,7 +14,7 @@
    <string>GameWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border-image : none;</string>
+   <string notr="true">border-image: url(:/Game-resources/Image-files/widget.jpg);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="label_7">

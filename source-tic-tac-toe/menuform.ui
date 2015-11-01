@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>641</width>
+    <width>597</width>
     <height>571</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>420</x>
      <y>510</y>
      <width>101</width>
      <height>21</height>
@@ -41,7 +41,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>160</x>
      <y>20</y>
      <width>291</width>
      <height>61</height>
@@ -67,7 +67,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>420</x>
      <y>530</y>
      <width>151</width>
      <height>21</height>
@@ -89,7 +89,7 @@
   <widget class="QCommandLinkButton" name="commandLinkButton_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>10</x>
      <y>500</y>
      <width>141</width>
      <height>41</height>
@@ -104,7 +104,7 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image:none</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Quit Game</string>
@@ -113,7 +113,7 @@
   <widget class="QCommandLinkButton" name="commandLinkButton_3">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>180</x>
      <y>320</y>
      <width>241</width>
      <height>51</height>
@@ -135,7 +135,7 @@
   <widget class="QCommandLinkButton" name="commandLinkButton">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>170</x>
      <y>160</y>
      <width>271</width>
      <height>51</height>
@@ -157,7 +157,7 @@
   <widget class="QCommandLinkButton" name="commandLinkButton_4">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>90</x>
      <y>230</y>
      <width>191</width>
      <height>41</height>
@@ -180,7 +180,7 @@
   <widget class="QCommandLinkButton" name="commandLinkButton_5">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>350</x>
      <y>230</y>
      <width>187</width>
      <height>41</height>
@@ -204,7 +204,7 @@
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>110</y>
+     <y>100</y>
      <width>281</width>
      <height>31</height>
     </rect>
@@ -219,7 +219,7 @@
     <string notr="true">border-image : none</string>
    </property>
    <property name="text">
-    <string>This is an unbeatable tic-tac-toe game</string>
+    <string>An unbeatable tic-tac-toe game</string>
    </property>
   </widget>
  </widget>

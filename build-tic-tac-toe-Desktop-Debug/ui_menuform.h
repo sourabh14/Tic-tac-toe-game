@@ -37,11 +37,11 @@ public:
     {
         if (MenuForm->objectName().isEmpty())
             MenuForm->setObjectName(QStringLiteral("MenuForm"));
-        MenuForm->resize(641, 571);
+        MenuForm->resize(597, 571);
         MenuForm->setStyleSheet(QStringLiteral(""));
         label_3 = new QLabel(MenuForm);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(450, 510, 101, 21));
+        label_3->setGeometry(QRect(420, 510, 101, 21));
         QFont font;
         font.setFamily(QStringLiteral("Ubuntu"));
         font.setPointSize(12);
@@ -49,7 +49,7 @@ public:
         label_3->setStyleSheet(QStringLiteral("border-image : none"));
         label_2 = new QLabel(MenuForm);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(190, 20, 291, 61));
+        label_2->setGeometry(QRect(160, 20, 291, 61));
         QFont font1;
         font1.setFamily(QStringLiteral("Zekton"));
         font1.setPointSize(36);
@@ -61,22 +61,22 @@ public:
         label_2->setStyleSheet(QStringLiteral("border-image : none;"));
         label_4 = new QLabel(MenuForm);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(450, 530, 151, 21));
+        label_4->setGeometry(QRect(420, 530, 151, 21));
         label_4->setFont(font);
         label_4->setStyleSheet(QStringLiteral("border-image : none"));
         commandLinkButton_2 = new QCommandLinkButton(MenuForm);
         commandLinkButton_2->setObjectName(QStringLiteral("commandLinkButton_2"));
-        commandLinkButton_2->setGeometry(QRect(40, 500, 141, 41));
+        commandLinkButton_2->setGeometry(QRect(10, 500, 141, 41));
         QFont font2;
         font2.setFamily(QStringLiteral("Ubuntu Mono"));
         font2.setPointSize(14);
         font2.setBold(true);
         font2.setWeight(75);
         commandLinkButton_2->setFont(font2);
-        commandLinkButton_2->setStyleSheet(QStringLiteral("border-image:none"));
+        commandLinkButton_2->setStyleSheet(QStringLiteral(""));
         commandLinkButton_3 = new QCommandLinkButton(MenuForm);
         commandLinkButton_3->setObjectName(QStringLiteral("commandLinkButton_3"));
-        commandLinkButton_3->setGeometry(QRect(210, 320, 241, 51));
+        commandLinkButton_3->setGeometry(QRect(180, 320, 241, 51));
         QFont font3;
         font3.setFamily(QStringLiteral("Ubuntu Mono"));
         font3.setPointSize(20);
@@ -84,12 +84,12 @@ public:
         commandLinkButton_3->setStyleSheet(QStringLiteral("border-image : none;"));
         commandLinkButton = new QCommandLinkButton(MenuForm);
         commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
-        commandLinkButton->setGeometry(QRect(200, 160, 271, 51));
+        commandLinkButton->setGeometry(QRect(170, 160, 271, 51));
         commandLinkButton->setFont(font3);
         commandLinkButton->setStyleSheet(QStringLiteral("border-image : none;"));
         commandLinkButton_4 = new QCommandLinkButton(MenuForm);
         commandLinkButton_4->setObjectName(QStringLiteral("commandLinkButton_4"));
-        commandLinkButton_4->setGeometry(QRect(120, 230, 191, 41));
+        commandLinkButton_4->setGeometry(QRect(90, 230, 191, 41));
         QFont font4;
         font4.setPointSize(12);
         font4.setBold(true);
@@ -98,12 +98,12 @@ public:
         commandLinkButton_4->setStyleSheet(QStringLiteral("border-image : none;"));
         commandLinkButton_5 = new QCommandLinkButton(MenuForm);
         commandLinkButton_5->setObjectName(QStringLiteral("commandLinkButton_5"));
-        commandLinkButton_5->setGeometry(QRect(380, 230, 187, 41));
+        commandLinkButton_5->setGeometry(QRect(350, 230, 187, 41));
         commandLinkButton_5->setFont(font4);
         commandLinkButton_5->setStyleSheet(QStringLiteral("border-image : none;"));
         label_5 = new QLabel(MenuForm);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(200, 110, 281, 31));
+        label_5->setGeometry(QRect(200, 100, 281, 31));
         label_5->setFont(font);
         label_5->setStyleSheet(QStringLiteral("border-image : none"));
 
@@ -123,7 +123,7 @@ public:
         commandLinkButton->setText(QApplication::translate("MenuForm", "Play V/S Computer", 0));
         commandLinkButton_4->setText(QApplication::translate("MenuForm", "Computer plays first", 0));
         commandLinkButton_5->setText(QApplication::translate("MenuForm", "Player plays first", 0));
-        label_5->setText(QApplication::translate("MenuForm", "This is an unbeatable tic-tac-toe game", 0));
+        label_5->setText(QApplication::translate("MenuForm", "An unbeatable tic-tac-toe game", 0));
     } // retranslateUi
 
 };

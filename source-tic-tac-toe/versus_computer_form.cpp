@@ -223,21 +223,15 @@ void versus_computer_form:: firstmove() {
 void versus_computer_form:: declare_winner() {
     msgbox.setText("COMPUTER WINS!!\n\nBetter luck next time\n\n");
     msgbox.exec();
-    qApp->quit();
+    this->close();
 }
 
 
 void versus_computer_form:: declare_draw() {
     msgbox.setText("GAME DRAWN \n\n Well played");
     msgbox.exec();
-    qApp->quit();
+    this->close();
 }
-
-
-
-
-
-
 
 
 //      Push buttons

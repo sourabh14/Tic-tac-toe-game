@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/Game-resources/Image-files/widget.jpg);</string>
+  </property>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -323,6 +326,9 @@ border-image : none</string>
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image : none;</string>
    </property>
    <property name="text">
     <string>Quit game</string>

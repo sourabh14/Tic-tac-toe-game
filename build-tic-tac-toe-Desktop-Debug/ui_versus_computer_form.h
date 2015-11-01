@@ -46,6 +46,7 @@ public:
         if (versus_computer_form->objectName().isEmpty())
             versus_computer_form->setObjectName(QStringLiteral("versus_computer_form"));
         versus_computer_form->resize(633, 582);
+        versus_computer_form->setStyleSheet(QStringLiteral("border-image: url(:/Game-resources/Image-files/widget.jpg);"));
         label_2 = new QLabel(versus_computer_form);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(170, 10, 291, 61));
@@ -142,6 +143,7 @@ public:
         font3.setBold(true);
         font3.setWeight(75);
         commandLinkButton->setFont(font3);
+        commandLinkButton->setStyleSheet(QStringLiteral("border-image : none;"));
         label_2->raise();
         label->raise();
         label_6->raise();
