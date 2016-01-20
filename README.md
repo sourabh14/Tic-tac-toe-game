@@ -12,6 +12,6 @@ Path to the executable : Tic-tac-toe-game/build-tic-tac-toe-Desktop-Debug/source
 
 # screenshots
 
-![alt tag](https://github.com/sourabh14/Tic-tac-toe-game/blob/master/images/ss1.png =300x300)
+<img src="https://raw.githubusercontent.com/sourabh14/Tic-tac-toe-game/master/images/ss1.png" width="400" height="400" />
 
-![alt tag](https://github.com/sourabh14/Tic-tac-toe-game/blob/master/images/ss2.png =300x300)
+<img src="https://raw.githubusercontent.com/sourabh14/Tic-tac-toe-game/master/images/ss2.png" width="400" height="400" />
