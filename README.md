@@ -9,3 +9,9 @@ v/s computer mode.
 Currently the binary executable is compiled for 32-bit Intel based processor in linux environment.
 
 Path to the executable : Tic-tac-toe-game/build-tic-tac-toe-Desktop-Debug/source-tic-tac-toe
+
+# screenshots
+
+![alt tag](http://https://github.com/sourabh14/Tic-tac-toe-game/blob/master/images/ss1.png)
+
+![alt tag](http://https://github.com/sourabh14/Tic-tac-toe-game/blob/master/images/ss2.png)
